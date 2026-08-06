@@ -4,33 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Revisao</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <img src="/Aula_01/img/SENAI_São_Paulo_logo.png" alt="Logo">
+
+    <header class="header">
+    <div class="logo-container">
+        <img src="/Aula_01/img/SENAI_São_Paulo_logo.png" alt="Logo" class="logo-img">
+    </div>
         <h1>Dashboard</h1>
-        <!-- indicador  -->
+        <!-- Indicador de Conexão -->
+        <div class="status-conexao online">● Online</div>
     </header>
+        
     <main>
         <!-- Filtros e Controles -->
-        <section>
-            <button>Atualizar</button>
-            <select>
-                <option value="1">Todos</option>
-                <option value="2">Temperatura</option>
-                <option value="3">Umidade</option>
-                <option value="4">Pressão</option>
+        <section class="filtros-control">
+            <button id="botao-atualizar" class="btn-atualizar">Atualizar</button>
+            <select id="filtro-tipo">
+                <option value="Todos">Todos</option>
+                <option value="Temperatura">Temperatura</option>
+                <option value="Umidade">Umidade</option>
+                <option value="Pressão">Pressão</option>
             </select>
         </section>
 
         <!-- Grid de Sensores -->
-        <section>
-
+        <section id="grid-sensores" class="grid-sensores">
+            <!-- Sensores serão adicionados dinamicamente aqui -->
         </section>
     </main>
-    <footer>
+
+    <footer class="footer">
         <p>© 2026 SENAI São Paulo. Todos os direitos reservados.</p>
-        <!-- timestamp -->
+        <p>Última atualização: <span id="timestamp">--:--:--</span></p>
     </footer>
+
+    <!-- Modal para exibir o histórico do sensor -->
+<div id="modal-historico" class="modal-overlay hidden">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3 id="modal-titulo">Histórico do Sensor</h3>
+            <button id="modal-fechar" class="btn-fechar">&times;</button>
+        </div>
+        <div class="modal-body">
+            <ul id="modal-lista-historico">
+                <!-- Leituras do histórico entram aqui via JS -->
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <script src="script.js"></script>
 </body>
 </html>
