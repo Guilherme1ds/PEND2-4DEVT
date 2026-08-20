@@ -84,8 +84,8 @@ function simularAtualizacao() {
         // Guarda o novo valor aleatório no histórico do sensor, formatado com a unidade
         sensor.historico.push(`${sensor.valor} ${sensor.unidade}`);
 
-        // Mantém apenas os últimos 5 valores para não acumular infinitamente
-        if (sensor.historico.length > 5) {
+        // Mantém apenas os últimos 10 valores 
+        if (sensor.historico.length > 10) {
             sensor.historico.shift();
         }
     });
@@ -126,6 +126,21 @@ modalFechar.addEventListener("click", () => {
 modalHistorico.addEventListener("click", (e) => {
     if (e.target === modalHistorico) {
         modalHistorico.classList.add("hidden");
+    }
+});
+
+// Altera o estado do botão Online/Offline ao ser clicado, mudando a cor e o texto
+const statusConexao = document.querySelector(".status-conexao");
+
+statusConexao.addEventListener("click", () => {
+    if (statusConexao.classList.contains("online")) {
+        statusConexao.textContent = "● Offline";
+        statusConexao.classList.remove("online");
+        statusConexao.classList.add("offline");
+    } else {
+        statusConexao.textContent = "● Online";
+        statusConexao.classList.remove("offline");
+        statusConexao.classList.add("online");
     }
 });
 

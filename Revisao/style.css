@@ -319,3 +319,15 @@ select:focus {
     justify-content: space-between;
     font-size: 0.9rem;
 }
+
+.status-conexao.offline {
+    background-color: rgba(239, 68, 68, 0.15);
+    color: #f87171;
+    border: 1px solid rgba(248, 113, 113, 0.3);
+}
+
+/* Cursor de clique para indicar interatividade */
+.status-conexao {
+    cursor: pointer;
+    user-select: none;
+}
