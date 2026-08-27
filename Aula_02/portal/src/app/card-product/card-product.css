@@ -1,0 +1,6 @@
+app-card-product {
+    width: 180px;
+    height: 180px;
+    display: flex;
+    justify-content: space-between;
+}

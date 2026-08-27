@@ -1,0 +1,10 @@
+app-header {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    position: absolute;
+    left: 20px;
+}
