@@ -1,4 +1,19 @@
-body {
-    width: 100%;
-    height: 250px;
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%; 
+  background-color: #d00000;
+  border-radius: 8px;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  display: block;
 }
